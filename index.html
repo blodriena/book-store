@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BREAKER BOOKS — Expand Your Universe</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,300;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="breakerbooks-favicon.svg">
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<div class="ambient"></div>
+ 
+<header>
+  <div class="header-main">
+    <a class="logo" href="#">
+      <div class="logo-text">BREAKER<span>BOOKS</span></div>
+    </a>
+    <div class="search-wrap">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="search-input" placeholder="Search books, authors, categories…">
+      <button class="search-clear" id="search-clear">✕</button>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="toggleWishlist()" title="Wishlist">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="badge" id="wish-count">0</span>
+      </button>
+      <button class="icon-btn" onclick="toggleCartPanel()" title="Cart">
+        <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+ 
+<div class="filter-bar">
+  <div class="filter-row" id="cat-row">
+    <span class="filter-label">Category:</span>
+    <button class="pill active" data-cat="all">All Books</button>
+    <button class="pill" data-cat="science">⚛️ Science</button>
+    <button class="pill" data-cat="finance">📈 Finance</button>
+    <button class="pill" data-cat="self-help">🧠 Self-Help</button>
+    <button class="pill" data-cat="technology">💻 Technology</button>
+    <button class="pill" data-cat="philosophy">🏛️ Philosophy</button>
+    <button class="pill" data-cat="history">🌍 History</button>
+    <button class="pill" data-cat="art">🎨 Art & Design</button>
+  </div>
+  <div class="filter-row" id="sort-row">
+    <span class="filter-label">Sort by:</span>
+    <button class="pill active" data-sort="default">Featured</button>
+    <button class="pill" data-sort="price-asc">Price: Low → High</button>
+    <button class="pill" data-sort="price-desc">Price: High → Low</button>
+    <button class="pill" data-sort="rating">Top Rated</button>
+    <button class="pill" data-sort="newest">Newest</button>
+  </div>
+</div>
+ 
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">🌌 Quantum Knowledge Universe</div>
+    <h1>Explore the<br><span class="grad">Infinite Mind</span></h1>
+    <p class="hero-sub">Handpicked books across science, finance, philosophy and beyond — for those who seek to understand the universe.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">2,400+</div><div class="stat-lbl">Books</div></div>
+      <div><div class="stat-num">38</div><div class="stat-lbl">Categories</div></div>
+      <div><div class="stat-num">99K+</div><div class="stat-lbl">Readers</div></div>
+    </div>
+  </div>
+  <div id="dot-grid-wrap"></div>
+</section>
+ 
+<div class="results-bar">
+  <div class="results-info">Showing <span id="count-display">0</span> books</div>
+</div>
+ 
+<div class="books-section">
+  <div class="books-grid" id="books-grid"></div>
+</div>
+ 
+<footer>
+  <div>
+    <div class="footer-logo">BREAKERBOOKS</div>
+    <p class="footer-tagline">Curated knowledge for curious minds. Science, finance, philosophy and beyond.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Catalog</h4>
+    <a href="#">Science</a><a href="#">Finance</a><a href="#">Self-Help</a><a href="#">Technology</a><a href="#">Philosophy</a>
+  </div>
+  <div class="footer-col">
+    <h4>Company</h4>
+    <a href="#">About Us</a><a href="#">Blog</a><a href="#">Careers</a><a href="#">Press</a>
+  </div>
+  <div class="footer-col">
+    <h4>Support</h4>
+    <a href="#">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Contact</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-copy">© 2026 BREAKERBOOKS. ALL RIGHTS RESERVED.</span>
+  <div class="footer-dots"><span></span><span></span><span></span></div>
+</div>
+ 
+<div class="toast" id="toast"></div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
