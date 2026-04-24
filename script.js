@@ -11,6 +11,8 @@ let dgH='<div class="dot-grid">';
 for(let i=0;i<64;i++)dgH+=`<span style="--delay:${(Math.random()*3).toFixed(2)}s;--d:${(2+Math.random()*3).toFixed(2)}s;"></span>`;
 dg.innerHTML=dgH+'</div>';
 
+
+
 const books=[
   {id:1,title:"A Brief History of Time",author:"Stephen Hawking",cat:"science",price:18.99,origPrice:24.99,rating:4.9,ratingCount:12400,badge:"bestseller",img:"https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg",year:2020},
   {id:2,title:"The Intelligent Investor",author:"Benjamin Graham",cat:"finance",price:22.99,origPrice:29.99,rating:4.8,ratingCount:9800,badge:"bestseller",img:"https://covers.openlibrary.org/b/isbn/9780060555665-L.jpg",year:2021},
